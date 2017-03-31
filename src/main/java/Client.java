@@ -12,9 +12,9 @@ public class Client {
     this.address = address;
   }
 
-  // public int getId() {
-  //   return id;
-  // }
+  public int getId() {
+    return id;
+  }
 
   public String getName() {
     return name;
@@ -26,6 +26,18 @@ public class Client {
 
   public String getAddress() {
     return address;
+  }
+
+  @Override
+  public boolean equals(Object otherClient) {
+    if (!(otherClient instanceof Client)) {
+      return false;
+    } else {
+      Client newClient = (Client) otherClient;
+      return this.getName().equals(newClient.getName())
+        && this.getPhoneNumber().equals(newClient.getPhoneNumber())
+        && this.getAddress().equals(newClient.getAddress());
+    }
   }
 
 }

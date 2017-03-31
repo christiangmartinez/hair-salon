@@ -1,0 +1,15 @@
+<!--client-edit-form.vtl-->
+<h1>Edit information for $client.getName()</h1>
+
+<form action="stylists/$client.getStylistId()/clients/$client.getId()" method="post">
+  <label for="name">Client name</label>
+  <input id="name" name="name" type="text" value="$client.getName()" class="form-control">
+  <label for="phoneNumber">Client phone number</label>
+  <input id="phoneNumber" name="phoneNumber" type="text" value="$client.getPhoneNumber()" class="form-control">
+  <label for="address">Client address</label>
+  <input id="address" name="address" type="text" value="$client.getAddress()" class="form-control">
+  <button type="submit" class="btn btn-warning">Update client info</button>
+</form>
+
+<a href="/stylists/$stylist.getId()">Back to $stylist.getName()</a>
+<!--client-edit-form.vtl-->

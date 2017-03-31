@@ -1,18 +1,19 @@
-# _hair-salon_
+# _Hair Salon Stylist/Client Tracker_
 
-#### _hair-salon, 03-31-2017_
+#### _Epicodus Friday project, 03-31-2017_
 
 #### By _**Christian Martinez**_
 
 ## Description
-_Example text for the description of the project_
+_This java application will allow users to add stylists and clients to their hair salon._
 
 
 ## Specifications
 
 | Behavior                   | Input Example     | Output Example    |
 | -------------------------- | -----------------:| -----------------:|
-
+| Application will hold a value for stylist | Jackie | Jackie |
+| Application will hold a value for client that as subcategory of stylist | Jackie -> Bob | Jackie -> Bob |
 
 
 ## Setup/Installation Requirements

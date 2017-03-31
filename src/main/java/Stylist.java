@@ -57,7 +57,9 @@ public class Stylist {
   public static Stylist find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM stylists where id = :id";
-      Stylist stylist = con.createQuery(sql).addParameter("id", id).executeAndFetchFirst(Stylist.class);
+      Stylist stylist = con.createQuery(sql)
+      .addParameter("id", id)
+      .executeAndFetchFirst(Stylist.class);
       return stylist;
     }
   }
@@ -68,6 +70,17 @@ public class Stylist {
       return con.createQuery(sql)
       .addParameter("id", this.id)
       .executeAndFetch(Client.class);
+    }
+  }
+
+  public void update(String name, String phoneNumber) {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "UPDATE stylists SET name = :name, phoneNumber = :phoneNumber WHERE id = :id";
+      con.createQuery(sql)
+      .addParameter("name", name)
+      .addParameter("phoneNumber", phoneNumber)
+      .addParameter("id", id)
+      .executeUpdate();
     }
   }
 

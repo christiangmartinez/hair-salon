@@ -47,7 +47,7 @@ public class ClientTest {
   public void save_savesStylistIdIntoDatabase_true() {
     Stylist testStylist = new Stylist("Gertrude", "222-222-2222");
     testStylist.save();
-    Client testClient = new Client("Chulo", "555-555-5555", "123 Chulo lane", 1);
+    Client testClient = new Client("Chulo", "555-555-5555", "123 Chulo lane", testStylist.getId());
     testClient.save();
     Client savedClient = Client.find(testClient.getId());
     assertEquals(savedClient.getStylistId(), testStylist.getId());

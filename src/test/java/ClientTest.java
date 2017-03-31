@@ -70,4 +70,13 @@ public class ClientTest {
     assertEquals("Chulito", Client.find(testClient.getId()).getName());
   }
 
+  @Test
+  public void delete_deletesClient() {
+    Client testClient = new Client("Chulo", "555-555-5555", "123 Chulo lane");
+    testClient.save();
+    int testClientId = testClient.getId();
+    testClient.delete();
+    assertEquals(null, Client.find(testClientId));
+  }
+
 }

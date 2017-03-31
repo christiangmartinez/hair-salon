@@ -1,15 +1,14 @@
 <!--stylist.vtl-->
 <h1>$stylist.getName()</h1>
-<h2>Stylist number: $stylist.getPhoneNumber()</h2>
+<h3>Stylist number: $stylist.getPhoneNumber()</h3>
 
 
-<h3>Clients - name to see all client information.</h3>
+<p>Clients - click name to see all client information.</p>
 
 <ul>
   #foreach ($client in $stylist.getClients())
   <li><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getName()</a></li>
   #end
 </ul>
-<a href="/stylists">Back to all stylists</a>
-<a href="/">back to homepage</a>
+<a href="/stylists">Back to all stylists</a><br>
 <!--stylist.vtl-->

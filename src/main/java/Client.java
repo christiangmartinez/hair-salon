@@ -7,11 +7,13 @@ public class Client {
   private String name;
   private String phoneNumber;
   private String address;
+  private int stylistId;
 
-  public Client(String name, String phoneNumber, String address) {
+  public Client(String name, String phoneNumber, String address, int stylistId) {
     this.name = name;
     this.phoneNumber = phoneNumber;
     this.address = address;
+    this.stylistId = stylistId;
   }
 
   public int getId() {
@@ -30,6 +32,10 @@ public class Client {
     return address;
   }
 
+  public int getStylistId() {
+    return stylistId;
+  }
+
   @Override
   public boolean equals(Object otherClient) {
     if (!(otherClient instanceof Client)) {
@@ -38,17 +44,19 @@ public class Client {
       Client newClient = (Client) otherClient;
       return this.getName().equals(newClient.getName())
         && this.getPhoneNumber().equals(newClient.getPhoneNumber())
-        && this.getAddress().equals(newClient.getAddress());
+        && this.getAddress().equals(newClient.getAddress())
+        && this.getStylistId() == newClient.getStylistId();
     }
   }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
-      String sql = "INSERT INTO clients (name, phoneNumber, address) VALUES (:name, :phoneNumber, :address)";
+      String sql = "INSERT INTO clients (name, phoneNumber, address, stylistId) VALUES (:name, :phoneNumber, :address, :stylistId)";
       this.id = (int) con.createQuery(sql, true)
       .addParameter("name", this.name)
       .addParameter("phoneNumber", this.phoneNumber)
       .addParameter("address", this.address)
+      .addParameter("stylistId", this.stylistId)
       .executeUpdate()
       .getKey();
     }

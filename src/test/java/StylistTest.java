@@ -51,4 +51,5 @@ public class StylistTest {
     assertEquals(secondStylist, Stylist.find(secondStylist.getId()));
   }
 
+
 }

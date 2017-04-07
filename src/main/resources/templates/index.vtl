@@ -1,6 +1,4 @@
 <!--index.vtl-->
-<h1>Stylist/Client Tracker</h1>
-
 <h3>Stylists:</h3>
 
 #if($stylists)
@@ -17,10 +15,12 @@
   <div class="col-md-5">
     <h3>Add a Stylist</h3>
     <form action="/stylists" method="post">
-      <label for="name">Stylist name</label>
-      <input id="name" name="name" type="text">
-      <label for="phoneNumber">Stylist phone number</label>
-      <input id="phoneNumber" name="phoneNumber" type="text">
+      <div class="form-group">
+        <label for="name">Stylist name</label>
+        <input id="name" name="name" type="text" class="form-control">
+        <label for="phoneNumber">Stylist phone number</label>
+        <input id="phoneNumber" name="phoneNumber" type="text" class="form-control">
+      </div>
       <button type="submit" class="btn btn-primary">Add a stylist</button>
     </form>
   </div>

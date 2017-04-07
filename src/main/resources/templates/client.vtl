@@ -5,6 +5,9 @@
 <h3>Address: $client.getAddress()</h3>
 
 <a href="/stylists/$stylist.getId()">Back to stylist</a><br>
-<a href="/stylists/$stylist.getId()/clients/$client.getId()/edit">Edit client info</a>
+<a href="/stylists/$stylist.getId()/clients/$client.getId()/edit">Edit client info</a><br>
+<form action="/stylists/$stylist.getId()/clients/$client.getId()/delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete client</button>
+</form>
 
 <!--client.vtl-->

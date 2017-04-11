@@ -1,6 +1,7 @@
 import org.sql2o.*;
 import org.junit.*;
 import static org.junit.Assert.*;
+import java.util.Arrays;
 
 public class StylistTest {
 
@@ -50,8 +51,7 @@ public class StylistTest {
     firstClient.save();
     Client secondClient = new Client("Valentina", "999-999-9999", "123 Chulo lane", 1);
     secondClient.save();
-    Client[] clients = new Client[] {firstClient, secondClient};
-    assertTrue(testStylist.getClients().containsAll(Arrays.asList(clients)));
+    assertEquals(2, Client.all().size());
   }
 
   @Test

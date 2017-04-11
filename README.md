@@ -19,6 +19,8 @@ _This java application will allow users to add stylists and clients to their hai
 ## Setup/Installation Requirements
 
 * _Clone the repository_
+* _Create a database named hair_salon_
+* _In the terminal run the command psql hair_salon < hair_salon.sql
 * _Run the command 'gradle run'_
 * _Open browser and go to localhost:4567_
 

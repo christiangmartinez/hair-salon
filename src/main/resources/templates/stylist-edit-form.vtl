@@ -1,0 +1,13 @@
+<!--stylist-edit-form.vtl-->
+<h1>Edit $stylist.getName()</h1>
+
+<form action="/stylists/$stylist.getId()" method="post">
+  <div class="form-group">
+    <label for="name">Stylist name</label>
+    <input id="name" name="name" type="text" class="form-control" value="$stylist.getName()">
+    <label for="phoneNumber">Stylist phone number</label>
+    <input id="phoneNumber" name="phoneNumber" type="text" class="form-control" value="$stylist.getPhoneNumber()">
+  </div>
+  <button type="submit" class="btn btn-warning">Update info</button>
+</form>
+<!--stylist-edit-form.vtl-->

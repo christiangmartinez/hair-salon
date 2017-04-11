@@ -10,7 +10,13 @@
   <li><a href="/stylists/$stylist.getId()/clients/$client.getId()">$client.getName()</a></li>
   #end
 </ul>
-<a href="/stylists">Back to all stylists</a>
+<a href="/stylists">Back to all stylists</a><br>
+<a href="/stylists/$stylist.getId()/edit">Update Stylist info</a>
+<br>
+
+<form action="/stylists/$stylist.getId()/delete" method="post">
+<button type="submit" class="btn btn-danger">Delete Stylist</button>
+</form>
 
 
 <!--stylist.vtl-->
